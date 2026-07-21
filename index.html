@@ -254,9 +254,8 @@
         .mobile-menu a{color:var(--white);font-size:1.2rem;padding:12px;width:100%;text-align:center;border-radius:var(--radius)}
 
         /* Hero */
-        .hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 50%,var(--blue-dark) 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:120px}
+        .hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 50%,var(--blue-dark) 100%);position:relative;display:flex;align-items:center;overflow:hidden;padding:120px 0 80px}
         .hero::before{content:'';position:absolute;top:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,rgba(13,148,136,.15),rgba(3,105,161,.1));clip-path:polygon(20% 0,100% 0,100% 100%,0 100%);pointer-events:none}
-        .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:linear-gradient(to top,var(--white),transparent);pointer-events:none}
         .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
         .hero-content{color:var(--white)}
         .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:var(--teal-light);padding:8px 16px;border-radius:var(--radius-full);font-size:.85rem;font-weight:600;margin-bottom:24px}
@@ -283,10 +282,10 @@
         .hero-urgency-bar{background:var(--red);color:var(--white);text-align:center;padding:10px;font-size:.9rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:3}
 
         /* Trust Bar */
-        .trust-bar{background:var(--gray-50);border-bottom:1px solid var(--gray-200);padding:20px 0}
+        .trust-bar{background:var(--white);border-top:3px solid var(--teal);border-bottom:1px solid var(--gray-200);padding:20px 0;position:relative;z-index:3}
         .trust-bar .container{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-        .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray-600);font-weight:500}
-        .trust-item svg{width:20px;height:20px;color:var(--green)}
+        .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray-700);font-weight:600}
+        .trust-item svg{width:20px;height:20px;color:var(--teal)}
 
         /* Promotion */
         .promo{background:var(--white);position:relative}
