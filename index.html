@@ -179,6 +179,45 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog de Salud Urológica - Centro Urológico de Alta Especialidad",
+        "url": "https://www.cdmxurologo.com/#blog",
+        "publisher": {
+            "@type": "MedicalClinic",
+            "name": "Centro Urológico de Alta Especialidad"
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Crecimiento de próstata después de los 50: señales que no debes ignorar",
+                "description": "La hiperplasia prostática benigna afecta a más del 50% de los hombres mayores de 50 años en México. Conoce los síntomas de alerta.",
+                "author": {"@type": "Organization", "name": "Centro Urológico de Alta Especialidad"},
+                "datePublished": "2026-08-24",
+                "keywords": ["próstata", "hiperplasia prostática", "urólogo CDMX", "cirugía láser próstata"]
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Cálculos renales: causas, síntomas y tratamiento con láser en CDMX",
+                "description": "Los cálculos renales producen uno de los dolores más intensos. Conoce el tratamiento con litotricia láser disponible en Benito Juárez, CDMX.",
+                "author": {"@type": "Organization", "name": "Centro Urológico de Alta Especialidad"},
+                "datePublished": "2026-08-24",
+                "keywords": ["cálculos renales", "piedras en el riñón", "litotricia láser", "urólogo Benito Juárez"]
+            },
+            {
+                "@type": "BlogPosting",
+                "headline": "Check-up urológico anual: por qué todo hombre mayor de 40 debe hacerlo",
+                "description": "La detección temprana del cáncer de próstata salva vidas. Paquetes de valoración desde $499 MXN en Cd. de los Deportes, CDMX.",
+                "author": {"@type": "Organization", "name": "Centro Urológico de Alta Especialidad"},
+                "datePublished": "2026-08-24",
+                "keywords": ["check-up urológico", "antígeno prostático", "cáncer de próstata", "urólogo Ciudad de los Deportes"]
+            }
+        ]
+    }
+    </script>
+
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         :root{
@@ -394,6 +433,20 @@
         .location-hours p{font-size:.85rem;color:var(--gray-600)}
 
         /* CTA Final */
+        /* Blog */
+        .blog-section{background:var(--gray-50)}
+        .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        .blog-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+        .blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+        .blog-card-img{height:180px;display:flex;align-items:center;justify-content:center}
+        .blog-card-icon{display:flex;align-items:center;justify-content:center;width:80px;height:80px;background:rgba(255,255,255,.15);border-radius:50%}
+        .blog-card-body{padding:24px}
+        .blog-tag{display:inline-block;background:var(--teal);color:var(--white);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:var(--radius-full);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+        .blog-card-title{font-size:1.15rem;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:12px}
+        .blog-card-text{font-size:.92rem;color:var(--gray-600);line-height:1.7;margin-bottom:16px}
+        .blog-card-cta{font-size:.9rem;font-weight:700;color:var(--teal);transition:var(--transition)}
+        .blog-card-cta:hover{color:var(--green-dark)}
+
         .cta-final{background:linear-gradient(135deg,var(--navy),var(--blue-dark));color:var(--white);text-align:center;position:relative;overflow:hidden}
         .cta-final::before{content:'';position:absolute;top:-50%;left:-10%;width:300px;height:300px;background:rgba(13,148,136,.1);border-radius:50%}
         .cta-final::after{content:'';position:absolute;bottom:-30%;right:-5%;width:400px;height:400px;background:rgba(16,185,129,.08);border-radius:50%}
@@ -405,7 +458,7 @@
 
         /* Footer */
         .footer{background:var(--gray-900);color:var(--gray-300);padding:48px 0 24px}
-        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px}
+        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
         .footer h4{color:var(--white);font-weight:700;margin-bottom:16px;font-size:1rem}
         .footer p,.footer a{font-size:.85rem;line-height:1.8}
         .footer a:hover{color:var(--teal-light)}
@@ -445,6 +498,7 @@
             .services-grid{grid-template-columns:repeat(2,1fr)}
             .reasons-grid{grid-template-columns:repeat(2,1fr)}
             .footer-grid{grid-template-columns:1fr 1fr}
+            .blog-grid{grid-template-columns:1fr 1fr}
         }
         @media(max-width:768px){
             .section{padding:56px 0}
@@ -460,6 +514,7 @@
             .reasons-grid{grid-template-columns:1fr}
             .testimonials-grid{grid-template-columns:1fr}
             .locations-grid{grid-template-columns:1fr}
+            .blog-grid{grid-template-columns:1fr}
             .form-section .container{grid-template-columns:1fr}
             .footer-grid{grid-template-columns:1fr}
             .footer-bottom{flex-direction:column;gap:12px;text-align:center}
@@ -497,6 +552,7 @@
                 <a href="#servicios">Servicios</a>
                 <a href="#ubicaciones">Ubicaciones</a>
                 <a href="#contacto">Contacto</a>
+                <a href="#blog">Blog</a>
             </div>
             <div class="nav-cta">
                 <a href="tel:+525546177361" class="nav-phone">
@@ -518,6 +574,7 @@
         <a href="#servicios" onclick="toggleMenu()">Servicios</a>
         <a href="#ubicaciones" onclick="toggleMenu()">Ubicaciones</a>
         <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+        <a href="#blog" onclick="toggleMenu()">Blog</a>
         <a href="tel:+525546177361" class="btn btn-urgency" onclick="toggleMenu()">Llamar Urgencias 24h</a>
         <a href="#contacto" class="btn btn-primary" onclick="toggleMenu()">Agendar Cita</a>
     </div>
@@ -1174,6 +1231,55 @@
         </div>
     </section>
 
+    <!-- Blog -->
+    <section class="section blog-section" id="blog" aria-label="Blog de salud urológica">
+        <div class="container">
+            <h2 class="section-title text-center">Blog de Salud Urológica</h2>
+            <p class="section-subtitle text-center" style="margin-left:auto;margin-right:auto">Información confiable de nuestros especialistas para cuidar tu salud urológica.</p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+                        <span class="blog-card-icon">
+                            <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.5"><path d="M9 12h6m-3-3v6m-7 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Próstata</span>
+                        <h3 class="blog-card-title">Crecimiento de próstata después de los 50: señales que no debes ignorar</h3>
+                        <p class="blog-card-text">La hiperplasia prostática benigna afecta a más del 50% de los hombres mayores de 50 años en México. Conoce los síntomas de alerta como dificultad para orinar, chorro débil y ganas frecuentes de ir al baño, especialmente de noche. En nuestro centro urológico en Ciudad de los Deportes, CDMX, realizamos un diagnóstico integral con ultrasonido y antígeno prostático para determinar el tratamiento más adecuado &mdash; desde medicamentos hasta cirugía láser de mínima invasión.</p>
+                        <a href="#contacto" class="blog-card-cta">Agendar valoración de próstata &rarr;</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,var(--teal),var(--green))">
+                        <span class="blog-card-icon">
+                            <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        </span>
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Cálculos Renales</span>
+                        <h3 class="blog-card-title">Cálculos renales: causas, síntomas y tratamiento con láser en CDMX</h3>
+                        <p class="blog-card-text">Los cálculos renales o "piedras en el riñón" producen uno de los dolores más intensos que una persona puede experimentar. En la zona de Benito Juárez y alrededores, nuestros urólogos certificados realizan litotricia láser y ureteroscopía flexible para fragmentar y extraer los cálculos sin incisiones. Contamos con tecnología de última generación que permite una recuperación rápida &mdash; la mayoría de pacientes regresan a sus actividades en 24 a 48 horas.</p>
+                        <a href="#contacto" class="blog-card-cta">Consultar tratamiento de cálculos &rarr;</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-card-img" style="background:linear-gradient(135deg,var(--green-dark),var(--blue-dark))">
+                        <span class="blog-card-icon">
+                            <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        </span>
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Prevención</span>
+                        <h3 class="blog-card-title">Check-up urológico anual: por qué todo hombre mayor de 40 debe hacerlo</h3>
+                        <p class="blog-card-text">La detección temprana salva vidas. El cáncer de próstata es la principal causa de muerte por cáncer en hombres mexicanos, pero detectado a tiempo tiene una tasa de curación superior al 90%. Un check-up urológico completo incluye exploración física, ultrasonido, antígeno prostático y examen general de orina. En nuestro centro en Patriotismo 579, Cd. de los Deportes, ofrecemos paquetes de valoración desde $499 MXN con urólogos certificados por el Consejo Mexicano de Urología.</p>
+                        <a href="#contacto" class="blog-card-cta">Agendar mi check-up urológico &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-final section" aria-label="Llamado a la acción final">
         <div class="container">
@@ -1214,6 +1320,14 @@
                         <a href="#especialidades">Vejiga</a>
                         <a href="#especialidades">Testículo</a>
                         <a href="#especialidades">Urología Femenina</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Blog</h4>
+                    <div class="footer-links">
+                        <a href="#blog">Crecimiento de próstata</a>
+                        <a href="#blog">Cálculos renales</a>
+                        <a href="#blog">Check-up urológico</a>
                     </div>
                 </div>
                 <div>
