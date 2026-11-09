@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/", "destination": "/urologo-pedregal/index.html" },
     { "source": "/cirugias", "destination": "/urologo-pedregal/cirugias/index.html" },
-    { "source": "/cirugias/", "destination": "/urologo-pedregal/cirugias/index.html" }
+    { "source": "/cirugias/", "destination": "/urologo-pedregal/cirugias/index.html" },
+    { "source": "/calculos-renales", "destination": "/urologo-pedregal/calculos-renales/index.html" },
+    { "source": "/calculos-renales/", "destination": "/urologo-pedregal/calculos-renales/index.html" }
   ]
 }
