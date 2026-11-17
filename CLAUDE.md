@@ -1,107 +1,67 @@
-# Repo: urologoPedregal — Mapa de sedes, dominios y proyectos Vercel
+# Repo: urologo-pedregal-landing — ESTE REPO ES **Cd. Deportes**, NO Pedregal
 
-> **IMPORTANTE para Claude:** Antes de editar algo lee este archivo COMPLETO. Las apariencias engañan: nombres de carpetas y dominios NO siempre coinciden con lo que sirven.
+> **ANTES DE EDITAR**: lee esto completo. El nombre del repo confunde. Este repo (`fercho159-aq/urologo-pedregal-landing`) sirve al dominio **`www.cdmxurologo.com`** que corresponde a la sede **Cd. Deportes / Patriotismo**, NO a Pedregal.
 
 ---
 
-## Las dos sedes (negocios distintos del mismo cliente)
+## Mapa autoritativo (confirmado por el cliente 2026-11-17)
+
+| Repo GitHub | Local path | Dominio Vercel | Sede |
+|---|---|---|---|
+| `fercho159-aq/urologo-pedregal-landing` | `C:\Users\alexi\Desktop\urologoPedregal` (ESTE) | `www.cdmxurologo.com` | **Cd. Deportes / Patriotismo** |
+| `fercho159-aq/urologo-pedregal-landing-octubre-2026` | *(otro directorio)* | `urologospedregal.com` | **Pedregal real** |
+
+**Los nombres de los repos están al revés de lo que parece.** El repo con sufijo `-octubre-2026` es el Pedregal real.
+
+---
+
+## Las dos sedes
 
 | Sede | Nombre comercial | Campañas Google Ads |
 |---|---|---|
 | **Cd. Deportes / Patriotismo** | Centro Urológico de Alta Especialidad (CDMX) | Campaña "urólogo CDMX / Cd. Deportes" |
 | **Pedregal** | Clínica de Próstata en Pedregal CDMX | Campaña "urólogo Pedregal / clínica de próstata" |
 
-Son dos landings separadas, con campañas de Ads separadas. **Nunca las mezcles.**
+---
+
+## Regla de edición — leer antes de tocar NADA
+
+### El usuario dice "Pedregal", "clínica de próstata", "cirugía de próstata (Pedregal)", "cálculos renales (Pedregal)", "urologospedregal.com"
+→ **NO editar aquí.** Ir al otro repo: `fercho159-aq/urologo-pedregal-landing-octubre-2026`.
+
+### El usuario dice "Cd. Deportes", "CDMX", "Patriotismo", "cdmxurologo.com", o "la landing principal del dominio cdmxurologo"
+→ Editar aquí. Pero ⚠️ este repo está en un estado raro (ver sección siguiente): el contenido productivo real de Cd. Deportes está untracked en la raíz y NO se pushea hoy. Antes de editar aquí consultar al cliente.
 
 ---
 
-## Dominios — a qué sede pertenece cada uno (intención del cliente)
+## Estado anómalo de este repo (lo que hay que saber)
 
-| Dominio | Pertenece a | Debería servir |
-|---|---|---|
-| `www.cdmxurologo.com` | Cd. Deportes / Patriotismo | Landing de Cd. Deportes |
-| `urologospedregal.com` | Pedregal | Landing de Pedregal |
+Este repo nominalmente es Cd. Deportes pero su contenido en git actualmente sirve Pedregal por error histórico:
 
----
+- Carpeta `urologo-pedregal/` **tracked** → contenido de Pedregal (metido por error)
+- `vercel.json` → rewritea `/` → `/urologo-pedregal/index.html`
+- Resultado: `cdmxurologo.com` muestra Pedregal en lugar de Cd. Deportes
 
-## Estado ACTUAL en Vercel (2026-11-17)
+La landing original de Cd. Deportes vive **untracked** en la raíz:
+- `index.html` (1490 líneas, title "Urólogo en CDMX | Cd. de los Deportes")
+- `img/`, `img-hero-*.jpg`, `logo.png`, `logo.avif`, `favicon.ico`, `favicon-180.png`, `reporte.pdf`
 
-> ⚠️ Hay un desalineamiento histórico que el cliente conoce y decidió NO arreglar por ahora. Este repo sirve por error al dominio `cdmxurologo.com`, pero el contenido real del dominio que SÍ se mantiene al día es el de este repo aunque esté bajo el dominio equivocado. No intentar unificar/mover dominios sin permiso explícito.
-
-### Proyecto Vercel `urologo-pedregal-landing` (activo, al día)
-- **Repo conectado:** `fercho159-aq/urologo-pedregal-landing` (ESTE repo, `C:\Users\alexi\Desktop\urologoPedregal`)
-- **Dominio asignado:** `www.cdmxurologo.com` (+ `urologo-pedregal-landing.vercel.app`)
-- **Auto-deploy:** ✅ al pushear a `main` dispara deploy
-- **Qué sirve:** contenido de Pedregal (raíz rewriteada a `urologo-pedregal/index.html` vía `vercel.json`)
-
-### Proyecto Vercel `urologo-pedregal-landing-octubre-2026` (viejo, huérfano)
-- **Repo conectado:** desconocido / desconectado
-- **Dominio asignado:** `urologospedregal.com`
-- **Último deploy:** 2026-11-10, commit `9ab2b73`
-- **Qué sirve:** contenido de Pedregal, pero versión estancada del 10 nov
-- **No se puede editar desde este repo** (no está conectado aquí)
-
----
-
-## Estructura del repo
-
-```
-C:\Users\alexi\Desktop\urologoPedregal\
-├── vercel.json               ← rewritea `/` → `/urologo-pedregal/index.html`
-├── urologo-pedregal/         ← LANDING DE PEDREGAL (TRACKED)
-│   ├── index.html            ← landing principal Pedregal
-│   ├── cirugias/index.html   ← subpágina cirugía de próstata
-│   └── calculos-renales/index.html  ← subpágina cálculos renales
-├── blog/                     ← notas de blog (publicadas por herramienta automática externa)
-│
-├── index.html                ← ⚠️ UNTRACKED — landing vieja de Cd. Deportes, NO se pushea
-├── img/, img-hero-*.jpg      ← ⚠️ UNTRACKED — assets de la landing vieja de Cd. Deportes
-├── logo.png, logo.avif       ← ⚠️ UNTRACKED — logos viejos
-├── reporte.pdf               ← ⚠️ UNTRACKED
-└── favicon.ico, favicon-180.png  ← ⚠️ UNTRACKED (los tracked viven en urologo-pedregal/)
-```
-
-### Lo que está untracked NO forma parte del deploy actual
-Los archivos `index.html`, `img/`, `logo.*`, etc. en la raíz son residuos de cuando este repo era "dos sedes". Quedaron localmente cuando el commit `92555b6` ("chore: remover archivos de Cd. de los Deportes") borró Cd. Deportes del git. **No pushear sin confirmar con el usuario** — romperían la landing de Pedregal que hoy sirve este repo.
-
----
-
-## Reglas de edición por lo que te pida el usuario
-
-### "Edita Pedregal" / "landing principal de Pedregal" / "la clínica de próstata"
-→ Edita `urologo-pedregal/index.html` en ESTE repo
-→ Commit + push → se refleja en **`www.cdmxurologo.com`** (sí, suena raro, es por el desalineamiento histórico)
-→ **NO se refleja en `urologospedregal.com`** (ese dominio sirve otro proyecto)
-
-### "Edita cirugías" / "cirugía de próstata"
-→ `urologo-pedregal/cirugias/index.html`
-
-### "Edita cálculos renales"
-→ `urologo-pedregal/calculos-renales/index.html`
-
-### "Edita Cd. Deportes" / "CDMX" / "Patriotismo" / "la landing del dominio cdmxurologo"
-→ ⚠️ **PREGUNTAR AL USUARIO** dónde vive hoy. ESTE repo ya no tiene Cd. Deportes en git. El `index.html` local untracked es una versión vieja de referencia, no el fuente productivo.
-
-### "Edita urologospedregal.com"
-→ ⚠️ **PREGUNTAR AL USUARIO** — ese dominio no está conectado a este repo. Está en el proyecto Vercel `urologo-pedregal-landing-octubre-2026`, repo desconocido.
+**El cliente decidió NO arreglar este desalineamiento por ahora (2026-11-17).** Solo pidió documentarlo.
 
 ---
 
 ## Historial útil
 
-- Commit `aa7c446` — agregó Pedregal al repo (cuando este repo era "las dos sedes").
-- Commit `92555b6` — ⚠️ borró archivos de Cd. Deportes del repo, dejó solo Pedregal.
-- Commit `433563c` — agregó `vercel.json` para que la raíz sirviera Pedregal.
-- Commit `4068d2b` — agregó landing `/calculos-renales/`.
-- Commit `9ab2b73` — actualizó gtag a `AW-16973737252` (cuenta Google Ads actual).
-- Notas de blog en `blog/` — publicadas automáticamente por herramienta externa; no las tocar.
+- Commit `aa7c446` — metieron Pedregal al repo.
+- Commit `92555b6` — ⚠️ borraron archivos de Cd. Deportes del git.
+- Commit `433563c` — agregaron `vercel.json` para que la raíz sirviera Pedregal.
+- Commit `4068d2b` — agregaron landing `/calculos-renales/`.
+- Commit `9ab2b73` — gtag a `AW-16973737252`.
+- Commit `e25511e` / `2786d70` (2026-11-17) — ⚠️ aplicadas 5 correcciones del doctor (quitar PSA de Check Up Básico $900, quitar "Planes de financiamiento"). **Salieron en cdmxurologo.com en vez de urologospedregal.com** porque este repo no era el correcto. Las mismas correcciones deben replicarse en el repo `-octubre-2026`.
+- Notas en `blog/` — publicadas por herramienta automática externa. No tocar.
 
 ---
 
 ## Verificación después de push
 
-Los cambios en `urologo-pedregal/*` se reflejan en `https://www.cdmxurologo.com/` (NO en `urologospedregal.com`). Vercel típicamente deploya en < 2 minutos. Comando rápido para verificar:
-
-```bash
-curl -s "https://www.cdmxurologo.com/?v=$(date +%s)" | grep -A2 "Check Up"
-```
+Cambios aquí se reflejan en `https://www.cdmxurologo.com/` (NO en `urologospedregal.com`). Vercel deploya en < 2 min.
